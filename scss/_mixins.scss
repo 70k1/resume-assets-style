@@ -1,0 +1,105 @@
+@mixin step(){
+	@include grid-row($behavior:nest-collapse);
+	@media #{$small-only} {
+		.icon{
+			display: none;
+		}
+	}
+	
+	.text .location{
+		            @include opacity(.7);
+	          
+	             
+	}
+	
+    @media #{$medium-up} {
+    	.meta{
+		@include grid-row($behavior:nest-collapse);
+    	.icon{
+    		@include grid-column($columns:3, $collapse:true);
+    		height: 100%;
+
+
+    	}
+        .text{
+            @include grid-column($columns:21, $collapse:true);
+            .title{
+                @include grid-column($columns:12, $collapse:true);
+               
+               
+                .organization{
+                	@include grid-column($columns:12,$collapse:true);
+	                
+                }
+                .location{
+                	@include grid-column($columns:12,$collapse:true);
+	    
+	          
+                }
+            }
+            .timeframe{
+            
+                @include grid-column($columns:12, $collapse:true);
+            	text-align: right;
+            }
+        }
+        }
+        .description{
+			@include grid-column($columns:21, $offset:3, $collapse:true);
+        }
+    }
+}
+
+@mixin section(){
+	>section{
+		>h2, >h3{
+			@include grid-row;
+			margin-bottom: $unit*2.5 !important;
+			position: relative;
+			font-weight: 300;
+			
+
+			&:after{
+				text-align: right;
+				@include opacity(.1);
+
+				position: absolute;
+				top:$unit*2.75;
+				right:0;
+				font-size:$unit*3.5;
+
+			}
+		}
+	}
+}
+
+
+
+
+@mixin fa($var:false,$fw:false, $after:false, $small:false){
+	@if $after{
+		&:after{
+		@extend .fa;
+		@if $fw{
+			@extend .fa-fw;
+		}
+		content:$var;
+		}
+	}
+	@else {
+		&:before{
+			@extend .fa;
+			@if $fw{
+				@extend .fa-fw;
+			}
+			content:$var;
+		}
+	}
+	@if $small{
+		&:before,&:after{
+		font-size: .7em;
+		line-height: 1em;
+		}
+	}
+}
+

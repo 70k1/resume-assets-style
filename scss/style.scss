@@ -1,0 +1,532 @@
+@import "imports.scss";
+
+
+
+*{
+  	//outline:thin dotted red;
+    text-shadow: 0 $unit/5 $unit/5 rgba(255,255,255,.7);
+}
+
+ul,li{
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+:link{
+	@include fa($fa-var-angle-double-right, $fw:true, $after:true);	
+}
+
+header,main,footer{
+	z-index: 100;
+	position: relative;
+	@include grid-row;
+	padding: 0 $unit*2.5;
+	@media #{$large-up} {
+		padding: 0;
+    }
+}
+
+
+body{
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  @include opacity(.8);
+	background: url("../../../assets/image/pattern/grid/grid.png") center center repeat;
+
+}
+
+
+	.upper.band{
+		//background:rgba(255,255,255,.8);
+		@include background-image(linear-gradient(rgba(255,255,255,.1) 0%, rgba(255,255,255,.9) 100%));
+		
+		border-bottom:thin solid rgba(0,0,0,.15);
+		padding-bottom: $unit*5;
+		z-index: 10;
+		position: relative;
+
+		@media #{$medium-up}{
+		padding-top: $unit*5;
+		}
+	}
+
+	.lower.band{
+		@include background-image(linear-gradient(rgba(255,255,255,.8) 0%, rgba(255,255,255,.6) 10%, rgba(255,255,255,.8) 80%));
+		z-index: 10;
+		position: relative;
+		border-top:thin solid rgba(255,255,255,.9);
+		padding-bottom: $unit*5;
+
+
+		@media #{$medium-up}{
+		padding-top: $unit*5;
+		}
+	}
+
+video.background{
+	
+	   	position: fixed; right: 0; bottom: 0;
+min-width: 100%; min-height: 100%;
+width: auto; height: auto; z-index: -100;
+background: #fff;
+background-size: cover;
+	
+}
+
+/* HEADER */
+header{
+
+	text-align: center;
+    #identity{
+            #photo{
+                @include grid-row($behavior:nest-collapse);
+                height:$unit*60;
+             
+                margin-left: -($unit*2.5);
+                margin-right: -($unit*2.5);
+				
+                overflow: hidden;
+                background: #eee;
+                
+                border:thin solid $body-font-color;
+                border-width: 0;
+                background: url("../../../assets/image/photo/portrait.png") center center no-repeat;
+                background-size: cover;
+            }
+	    #title{
+	    	h1{
+		    	font-weight: 400;
+	    	}
+		    h2{
+			    font-size: 1.5em !important;
+		    }
+	    }
+    
+        }
+        #contact{
+            .mean{
+            	border-left:thin solid #eee;
+				padding-left:$unit*5;
+                @include grid-row($behavior:nest-collapse);
+                .key{
+                    display: none;
+                }
+                .value{
+					&:before{
+		        		margin-right:$unit*2;
+	        		}	                
+                }
+                
+	       
+            }
+            .mean.address{
+				.value{
+		            	@include fa($fa-var-map-marker, $fw:true);
+						
+		            	.dot{
+			            	display: none;
+		            	}
+	            }
+            }
+            .mean.phone{
+	            .value{
+		            	@include fa($fa-var-phone, $fw:true);		            
+	            }
+            }
+            .mean.mail{
+	            .value{
+		            	@include fa($fa-var-envelope-square, $fw:true);		            
+		            
+	            }
+            }
+        }		
+    
+
+    @media #{$medium-only} {
+        #identity{
+            @include grid-row($behavior:nest);
+            text-align: center;
+            #photo{
+            	margin: 0;
+            	
+                @include grid-column($columns:6, $offset:2, $collapse:true);
+                height:$unit*50;
+                text-align: center;
+                @include border-radius($unit*3);
+                border-width:$unit*1.5;
+            }
+            #title{
+            	margin-top: $unit*8;
+            	text-align: left;
+				
+                @include grid-column($columns:11, $offset:2, $collapse:true);
+                h1, h2{
+                	@include grid-row();
+                }
+            }
+        }
+        #contact{
+        	>ul{
+	        	@include block-grid(3);
+        	}
+            .mean{
+            	 font-size: 1em !important;
+                @include grid-row($behavior:nest-collapse);
+                .key{
+					visibility: hidden;
+                    @include grid-column($columns:0, $collapse:true);	
+                }
+                .value{
+                	text-align: center;
+                    @include grid-column($columns:24, $collapse:true);	
+                    &:before{
+						display: none !important;
+                    }
+                   
+	                 
+                    
+                }	
+            &.address{
+	            .value{
+	            	.dot{
+		            	display: inline;
+	            	}
+		            .extended{
+			            display: none;
+		            }
+	            }
+            }
+            }
+        }
+    }
+    
+    
+    @media #{$medium-up} {
+        text-align: left;
+        #contact{
+            .mean{
+                @include grid-row($behavior:nest-collapse);
+                .key{
+                    display: inherit;
+                }
+            }
+        }
+    }
+    	
+    @media #{$large-up} {
+        #identity{
+            #photo{
+            	border-width: ($unit*2);
+            	@include border-radius($unit*50);
+                @include grid-column($columns:4, $collapse:true);
+                height:$unit*50;
+                width: $unit*50;
+                margin: 0;
+            }
+            #title{
+            	
+	           	padding-top: $unit*7;
+            	
+                @include grid-column($columns:9, $offset:1, $collapse:true);
+            }
+        }
+        #contact{
+            @include grid-column($columns:10, $collapse:false);
+            padding-top:$unit*16;
+            .mean{
+                @include grid-row($behavior:nest-collapse);
+                font-size: 1em !important;
+                &.address{
+	                	.dot{
+			            	display: none;
+		            	}
+		            	.extended{
+			            	display: inline !important;
+		            	}
+                }
+                .key{
+					display: none;
+                    @include grid-column($columns:0, $collapse:true);	
+                }
+                .value{
+                    @include grid-column($columns:24, $collapse:true);	
+                }	
+            }
+        }
+    }
+    
+
+}
+
+/* PROFILE */
+main{
+	@include section();
+    #profile{
+    	h2{
+		//@include fa($fa-var-smile-o, $fw:true, $after:true);	
+    	}
+        > ul{
+            .strengths li{
+            
+	            	&:before{
+		        		margin-right:$unit*2;
+	        		}
+					
+				@include fa($fa-var-check-circle,$fw:false);
+            	
+                list-style: none !important;
+                list-style-position: inside !important;
+            }
+            @media #{$large-up} {
+                @include block-grid(2);
+            }
+        }
+    }
+    #experiences{
+    	h2{
+	    //	@include fa($fa-var-briefcase, $fw:true, $after:true);	
+    	}
+        .step{
+            @include step();
+        }
+
+    }
+    #academics{
+    	h2{
+	    //	@include fa($fa-var-graduation-cap, $fw:true, $after:true);	
+    	}    
+        .step{
+            @include step();
+        }
+    }
+    #skills{
+    	h2{
+	    //	@include fa($fa-var-magic, $fw:true, $after:true);	
+    	}
+        ul,li{
+            list-style: none;
+        }
+        > ul{
+            @media #{$medium-up} {
+            @include block-grid(3);  
+            }
+            .skill{	
+                @include grid-row($behavior:nest-collapse);
+                @extend .figure;
+                .name, .rating{
+                	
+	                //@include grid-row($behavior:collapse); 
+					display: block;
+                }
+                .rating {
+                	@include inline-list;
+	                li{
+	                	
+		                @include fa($fa-var-circle,$fw:true);
+						&.off{
+						@include fa($fa-var-circle-thin);
+						@include opacity(0.5);	
+						}
+						
+	                }
+                }
+                
+                @media #{$small-only}, #{$large-up}{
+	                .name{
+	                    @include grid-column($columns:12, $collapse:true);
+	                }
+	                .rating{
+	                    @include grid-column($columns:12, $collapse:true);
+	                }
+                }
+            }
+        }
+    }
+}
+
+/* FOOTER */
+footer{
+	@include section();
+	padding-top: $unit*20;
+	padding-bottom: $unit*20;
+    #about{
+    	h2{
+    	}
+        @include grid-row($behavior:nest-collapse);
+        #ingredients{
+        
+        				a{
+							color: $body-font-color !important;
+	&:after{
+		display: none !important;
+	}
+}
+        
+        	h3{
+	        	    
+
+    	
+        	}
+            @media #{$medium-up} {
+                @include grid-column($columns:12, $collapse:true);	
+            }
+            ul
+            {
+					
+				@include inline-list; 
+            li{
+				padding: 0 $unit*5 !important;
+				
+
+				border:thin solid rgba(0,0,0,.2);
+				@include border-radius($unit);
+				background: rgba(255,255,255,.2);
+				white-space: nowrap;
+				
+				&.warning{
+					
+					font-size: $unit*4;
+					background: none;
+					border:none;
+					@include opacity(.5);
+				
+					margin: 0 !important;
+					padding: 0 !important;
+					
+				
+						
+						@include fa($fa-var-warning);
+						&:before{
+							margin-left: $unit;
+							margin-right: $unit*2;
+						}
+					
+				}
+				
+            }
+                
+            }
+        }
+        #stats{
+        	h3{
+	        	    
+	    	
+    	
+        	}
+        	ul .stat 
+        	{
+        	
+        		@include grid-row($behavior:nest-collapse);
+				@extend .figure;
+        		.value, .key{
+	        		
+        		}
+        		
+				.value{
+					@include grid-column($columns:12, $collapse:true);
+					
+				}
+	        	.key{
+	        		@include grid-column($columns:12, $collapse:true);
+	        		
+	        		&:before{
+		        		margin-right:$unit*2;
+	        		}
+
+	        	}				
+				&.coke{
+					.key{
+						@include fa($fa-var-bitbucket,$fw:true);
+
+
+					}	
+				}
+				&.music{
+					.key{
+						@include fa($fa-var-music,$fw:true);
+
+					}						
+				}   
+				&.time{
+					.key{
+						@include fa($fa-var-clock-o,$fw:true);
+					}						
+				}     	
+
+        	}
+            @media #{$medium-up} {
+                @include grid-column($columns:12, $collapse:true);	
+                ul{
+                    .stat{
+                        list-style:none;
+                        .value{
+                            @include grid-column($columns:6, $collapse:true);
+                            text-align: right;
+							
+                        
+                        
+                        
+                        }
+                        .key{
+                            @include grid-column($columns:18, $collapse:true);
+                        }				
+                    }
+ 
+                }
+            }
+            @media #{$large-up}{
+	
+            }
+        }
+    }
+    #credits{
+    	padding-top: $unit*5;
+    	text-align: center;
+    	
+    	h5{
+	    	font-size: .8em;
+	    	line-height: 180%;
+	    	
+	    	
+    	}
+        @include grid-row($behavior:nest-collapse);
+        .git{
+        	@include fa($fa-var-github, $fw:true);
+        }
+
+    }
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

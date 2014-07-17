@@ -1,0 +1,49 @@
+	.figure{
+	        		border-bottom: thin dotted rgba(0,0,0,.2) !important;
+	        		&:first-child{
+		        	border-top: thin dotted rgba(0,0,0,.2) !important;	
+	        		}
+        		}
+        		
+        		
+  .spacer {
+	
+  padding-top:$unit*0;
+  margin-top: $unit*20;
+  margin-bottom: $unit*10;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; 
+  position:relative; 
+  .mask { 
+    overflow:hidden; height:$unit*5; 
+    &:after { 
+      content:''; 
+      display:block; margin:-($unit*5) auto 0;
+      width:100%; height:$unit*5;  
+      border-radius:$unit*25 / $unit*2.5;  
+      box-shadow:0 0  $unit rgba(0,0,0,.3);
+    }
+  }
+
+  &:first-child{
+
+		  margin-top: $unit*5;
+	  .mask{
+		  visibility: hidden;
+		
+	  }
+  }
+ 
+  &:last-child{
+    
+		  margin-bottom: 0;
+	  .mask{
+		  visibility: hidden;
+		
+	  }
+  }
+  
+ 
+  }
+        		
