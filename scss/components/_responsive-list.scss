@@ -1,0 +1,23 @@
+.responsive-list.component{
+
+    @include grid-row($behavior:nest);
+    //@include column-gap($unit);
+
+
+
+@media #{$medium-only} {
+ 
+
+     @include column-count(2);
+    
+    
+}
+
+
+@media #{$large-up} {
+
+       @include column-count(3);
+    
+}
+
+}

@@ -7807,6 +7807,161 @@ blockquote p {
   visibility: hidden;
 }
 
+/* line 1, ../scss/components/_identity.scss */
+.identity.component {
+  width: auto;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: none;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 3, ../scss/components/_identity.scss */
+.identity.component .photo {
+  width: auto;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: none;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 6, ../scss/components/_identity.scss */
+.identity.component .introduction {
+  width: auto;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: none;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 9, ../scss/components/_identity.scss */
+.identity.component .contact {
+  width: auto;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: none;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 13, ../scss/components/_identity.scss */
+.identity.component .contact .mean .icon {
+  padding-left: 0;
+  padding-right: 0;
+  width: 16.66667%;
+  float: left;
+}
+/* line 18, ../scss/components/_identity.scss */
+.identity.component .contact .mean .text {
+  padding-left: 0;
+  padding-right: 0;
+  width: 83.33333%;
+  float: left;
+}
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  /* line 30, ../scss/components/_identity.scss */
+  .identity.component .photo, .identity.component .introduction {
+    padding-left: 0;
+    padding-right: 0;
+    width: 50%;
+    float: left;
+  }
+}
+@media only screen and (min-width: 64.063em) {
+  /* line 40, ../scss/components/_identity.scss */
+  .identity.component .photo {
+    padding-left: 0;
+    padding-right: 0;
+    width: 25%;
+    float: left;
+  }
+  /* line 44, ../scss/components/_identity.scss */
+  .identity.component .information {
+    padding-left: 0;
+    padding-right: 0;
+    width: 75%;
+    float: left;
+  }
+  /* line 46, ../scss/components/_identity.scss */
+  .identity.component .information .introduction {
+    padding-left: 0;
+    padding-right: 0;
+    width: 50%;
+    float: left;
+  }
+  /* line 49, ../scss/components/_identity.scss */
+  .identity.component .information .contact {
+    padding-left: 0;
+    padding-right: 0;
+    width: 50%;
+    float: left;
+  }
+  /* line 51, ../scss/components/_identity.scss */
+  .identity.component .information .contact .mean {
+    width: auto;
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: none;
+    overflow: hidden;
+    *zoom: 1;
+  }
+  /* line 55, ../scss/components/_identity.scss */
+  .identity.component .information .contact .mean .icon {
+    padding-left: 0;
+    padding-right: 0;
+    width: 16.66667%;
+    float: left;
+  }
+  /* line 60, ../scss/components/_identity.scss */
+  .identity.component .information .contact .mean .text {
+    padding-left: 0;
+    padding-right: 0;
+    width: 83.33333%;
+    float: left;
+  }
+}
+
+/* line 1, ../scss/components/_responsive-list.scss */
+.responsive-list.component {
+  width: auto;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: none;
+  overflow: hidden;
+  *zoom: 1;
+}
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  /* line 1, ../scss/components/_responsive-list.scss */
+  .responsive-list.component {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    -o-column-count: 2;
+    column-count: 2;
+  }
+}
+@media only screen and (min-width: 64.063em) {
+  /* line 1, ../scss/components/_responsive-list.scss */
+  .responsive-list.component {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    -ms-column-count: 3;
+    -o-column-count: 3;
+    column-count: 3;
+  }
+}
+
 /* line 5, ../scss/style.scss */
 * {
   text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.7);
@@ -8499,7 +8654,7 @@ body main #skills > ul .skill .name, body main #skills > ul .skill .rating {
 body main #skills > ul .skill .rating {
   list-style-type: none;
 }
-/* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/typography/lists/_inline-list.scss */
+/* line 5, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/typography/lists/_inline-list.scss */
 body main #skills > ul .skill .rating, body main #skills > ul .skill .rating li {
   margin: 0px;
   padding: 0px;
@@ -8592,7 +8747,7 @@ body footer #about #ingredients a:after {
 body footer #about #ingredients ul {
   list-style-type: none;
 }
-/* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/typography/lists/_inline-list.scss */
+/* line 5, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/typography/lists/_inline-list.scss */
 body footer #about #ingredients ul, body footer #about #ingredients ul li {
   margin: 0px;
   padding: 0px;

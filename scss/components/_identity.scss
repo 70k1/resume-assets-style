@@ -1,0 +1,75 @@
+.identity.component{
+    @include grid-row($behavior:nest);
+    .photo{
+          @include grid-row($behavior:nest);
+    }
+    .introduction{
+        @include grid-row($behavior:nest);
+    }
+    .contact{
+           @include grid-row($behavior:nest);
+        .mean{
+        
+    .icon{
+        @include grid-column($columns:$total-columns*(2/12),  $collapse:true);	
+       
+    }
+        
+        .text{
+        @include grid-column($columns:$total-columns*(10/12),  $collapse:true);        
+        }
+                
+        }
+    }
+
+
+
+
+
+@media #{$medium-only} {
+    .photo, .introduction{
+           @include grid-column($columns:$total-columns*(6/12),  $collapse:true);	
+    }
+    
+    
+    
+}
+
+
+@media #{$large-up} {
+    .photo {
+           @include grid-column($columns:$total-columns*(3/12),  $collapse:true);	
+    }
+    
+    .information{
+           @include grid-column($columns:$total-columns*(9/12),  $collapse:true);	
+                .introduction{
+        @include grid-column($columns:$total-columns*(6/12),  $collapse:true);	
+    }
+        .contact{
+         @include grid-column($columns:$total-columns*(6/12),  $collapse:true);
+            .mean{
+                      @include grid-row($behavior:nest);
+                
+                
+                    .icon{
+        @include grid-column($columns:$total-columns*(2/12),  $collapse:true);	
+       
+    }
+        
+        .text{
+        @include grid-column($columns:$total-columns*(10/12),  $collapse:true);        
+        }
+                
+                
+                
+            }
+        }
+        
+    }
+    
+    
+    
+}
+
+}
